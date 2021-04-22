@@ -11,6 +11,15 @@ commas (`,`) and double points (`:`) **automatically** for you.
 I didn't type the semicolon key! Every semicolon is places automatically with
 cosco.
 
+# Installing
+[vim-plug](https://github.com/junegunn/vim-plug):
+
+```vim
+" HINT: DON'T USE THE DEV BRANCH YET! auto-cosco is not ready yet to call
+" it 'stable'. So I'm using the stable branch for all changes currently.
+Plug 'TornaxO7/auto-cosco.vim', {'branch' : 'stable'}
+```
+
 # How to use
 Please take a look into the `:h cosco` documentation.
 
