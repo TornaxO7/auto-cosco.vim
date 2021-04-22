@@ -13,3 +13,8 @@ cosco.
 
 # How to use
 Please take a look into the `:h cosco` documentation.
+
+# Contributing
+Thank you for considering to contribute to this plugin :) Take a look into
+[into the documentation](CONTRIBUTING.md) which is extra made if you want to
+understand the structure and code of `auto-cosco`.
