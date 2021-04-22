@@ -99,7 +99,12 @@ function cosco#AdaptCode()
         " the line has already some contents.
         
         if b:cls == '' && indent(b:pln) > 0
-            call setline(b:cln, py3eval("' ' * ". indent(b:pln)))
+	    let l:new_indent = py3eval("' ' * ". indent(b:pln))
+	    if l:new_indent != v:null
+		call setline(b:cln, l:new_indent)
+	    else
+		call setline(b:cln, '    ')
+	    endif
         endif
 
     elseif b:cosco_ret_value == 4
