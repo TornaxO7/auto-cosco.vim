@@ -88,8 +88,12 @@ function cosco_eval#ShouldNotSkip()
     " and one character further (indent(b:pln) + 1) and looks, if the
     " syntax regex pattern is a comment. So in this case the "lookuppoint"
     " would be the last slash in the last line.
+    "
+    " If you remove the backslashed, it looks like this:
+    "   ^(//|*/|/*)
+    " This pattern just checks if we are currently in a comment
     elseif g:cosco_ignore_comments &&
-                \ synIDattr(synID(b:pln, indent(b:pln) + 1, 1), 'name') =~ '\ccomment'
+                \ b:pls =~ '^\(\/\/\|\*\/\|\/\*\)'
         if g:cosco_debug
             echom "[Cosco:Comment] Is in comment"
         endif
