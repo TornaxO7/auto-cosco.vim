@@ -67,42 +67,16 @@ function cosco_helpers#get_information()
     " current line
     let b:cln = line('.')                         " cln = *C*urrent *L*ine *N*um
     let b:cl  = getline(b:cln)                    " cl  = *C*urrent *L*ine
-    let b:cls = cosco_helpers#Strip(b:cl)         " cls = *C*urrent *L*ine *S*tripped
+    let b:cls = trim(b:cl)         " cls = *C*urrent *L*ine *S*tripped
+    echo b:cls
 
     " next line
     let b:nln = nextnonblank(b:cln + 1)           " nln = *N*ext *L*ine *N*umber
     let b:nl  = getline(nextnonblank(b:cln + 1))  " nl  = *N*ext *L*ine
-    let b:nls = cosco_helpers#Strip(b:nl)         " nls = *N*ext *L*ine *S*tripped
+    let b:nls = trim(b:nl)         " nls = *N*ext *L*ine *S*tripped
     
     " previous line
     let b:pln = prevnonblank(b:cln - 1)           " pln = *P*revious *L*ine *N*umber
     let b:pl  = getline(prevnonblank(b:cln - 1))  " pl  = *P*revious *L*ine
-    let b:pls = cosco_helpers#Strip(b:pl)         " pl  = *P*revious *L*ine
-endfunction
-
-" --------------------
-" Strip functions 
-" --------------------
-" Step 1: Remove all spaces on the left
-"   Example:
-"     "  int rofl;    " => "int rofl;     "
-"
-" Step 2: Remove all comments and space on the right
-"   Example:
-"     "int rofl; // hello there    " => "int rofl;"
-function! cosco_helpers#Strip(string)
-    let l:stripped_string = cosco_helpers#StripLeft(a:string)
-    return cosco_helpers#StripRight(l:stripped_string)
-endfunction
-
-" Remove all beginning space characters
-function! cosco_helpers#StripLeft(string)
-    return substitute(a:string, '^\s*', '', 'e')
-endfunction
-
-" Remove all ending space characters and as well comment lines.
-" Example:
-"   "int rofl;     // useless comment, LOL" => "int rofl;"
-function! cosco_helpers#StripRight(string)
-    return substitute(a:string, '\s*\(//.*\)\?$', '', 'e')
+    let b:pls = trim(b:pl)         " pl  = *P*revious *L*ine
 endfunction
