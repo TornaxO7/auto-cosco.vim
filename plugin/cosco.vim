@@ -50,11 +50,11 @@ endif
 " which filetypes should be added?
 if !exists("g:cosco_whitelist")
     let g:cosco_whitelist = [
-        \ "c",
-        \ "cpp",
-        \ "css",
-        \ "javascript",
-        \ "rust"
+        \ 'c',
+        \ 'cpp',
+        \ 'css',
+        \ 'javascript',
+        \ 'rust'
         \]
 endif
 
@@ -64,8 +64,13 @@ endif
 if !exists("g:cosco_enable")
     let g:cosco_enable = 1
 
-elseif &readonly || get(g:cosco_whitelist, &ft, 0)
+elseif &readonly || (get(g:cosco_whitelist, &ft, 0) == 0)
     let g:cosco_enable = 0
+endif
+
+if g:cosco_enable
+    echom 'Enabled cosco'
+    echom get(g:cosco_whitelist, &ft, 0)
 endif
 
 " Look, if cosco should try to map the main function

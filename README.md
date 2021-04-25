@@ -27,3 +27,7 @@ Please take a look into the `:h cosco` documentation.
 Thank you for considering to contribute to this plugin :) Take a look into
 [into the documentation](CONTRIBUTING.md) which is extra made if you want to
 understand the structure and code of `auto-cosco`.
+
+# Credits
+Thanks to [lfilho](https://github.com/lfilho) the original plugin writer of
+[cosco](https://github.com/lfilho/cosco.vim).
