@@ -22,13 +22,6 @@ call cosco_helpers#set_setting("g:cosco_auto_setter",        1)
 call cosco_helpers#set_setting("g:cosco_auto_setter_events", ["TextChangedI"])
 call cosco_helpers#set_setting("g:cosco_ignore_comments",    1)
 call cosco_helpers#set_setting("g:cosco_whitelist",          ['c', 'cpp', 'css', 'javascript', 'rust' ])
-call cosco_helpers#set_setting("g:cosco_enable",             1)
-
-if index(g:cosco_whitelist, &ft) == -1
-    let g:cosco_enable = 0
-    echom 'filetype: ' . &ft
-endif
-
 call cosco_helpers#set_setting("g:cosco_map_cr",  1)
 
 " -------------------
