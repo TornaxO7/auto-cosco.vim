@@ -1,6 +1,6 @@
 cosco.txt   Auto-Semicolon-and-Comma placer.
 cosco
-
+                                                                         *cosco*
                             __________  _____ __________ 
                            / ____/ __ \/ ___// ____/ __ \
                           / /   / / / /\__ \/ /   / / / /

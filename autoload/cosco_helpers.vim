@@ -80,3 +80,18 @@ function cosco_helpers#get_information()
     let b:pl  = getline(prevnonblank(b:cln - 1))  " pl  = *P*revious *L*ine
     let b:pls = trim(b:pl)         " pl  = *P*revious *L*ine
 endfunction
+
+"
+" What does it do?
+"   Loads the default setting of the given setting for cosco if the user didn't
+"   provide a value to it.
+"  
+" Parameters:
+"	name: The name of the setting (string)
+"	default: The default value for the setting.
+"
+function cosco_helpers#set_setting(name, default)
+    if !exists(a:name)
+        execute 'let ' . a:name . '=' . default
+    endif
+endfunction
