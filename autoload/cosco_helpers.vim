@@ -85,6 +85,8 @@ endfunction
 " What does it do?
 "   Loads the default setting of the given setting for cosco if the user didn't
 "   provide a value to it.
+"   Credits goes to vimtex: 
+"     https://github.com/lervag/vimtex/blob/master/autoload/vimtex/options.vim#L7
 "  
 " Parameters:
 "	name: The name of the setting (string)
@@ -92,6 +94,6 @@ endfunction
 "
 function cosco_helpers#set_setting(name, default)
     if !exists(a:name)
-        execute 'let ' . a:name . '=' . default
+        let {a:name} = a:default
     endif
 endfunction
