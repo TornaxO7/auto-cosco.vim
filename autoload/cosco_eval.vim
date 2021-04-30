@@ -90,10 +90,16 @@ function cosco_eval#ShouldNotSkip()
     " would be the last slash in the last line.
     "
     " If you remove the backslashed, it looks like this:
-    "   ^(//|*/|/*)
-    " This pattern just checks if we are currently in a comment
+    "   ^(//|*/|/*|*)
+    "
+    " And if you split the conditions:
+    "   - //
+    "   - */
+    "   - /*
+    "   - *
+    " As you can see: The normal comments :)
     elseif g:cosco_ignore_comments &&
-                \ b:pls =~ '^\(\/\/\|\*\/\|\/\*\)'
+                \ b:pls =~ '^\(\/\/\|\*\/\|\/\*\|\*\)'
         if g:cosco_debug
             echom "[Cosco:Comment] Is in comment"
         endif
