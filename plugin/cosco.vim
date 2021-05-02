@@ -15,6 +15,11 @@ let b:cosco_initialised = 1
 " =================
 " 1. Variables 
 " =================
+" -------------------
+" Debug variables
+" -------------------
+call cosco_helpers#set_setting("g:cosco_debug",  0)
+
 " ---------------------------
 " 1.1 Configurable variables 
 " ---------------------------
@@ -23,8 +28,3 @@ call cosco_helpers#set_setting("g:cosco_auto_setter_events", ["TextChangedI"])
 call cosco_helpers#set_setting("g:cosco_ignore_comments",    1)
 call cosco_helpers#set_setting("g:cosco_whitelist",          ['c', 'cpp', 'css', 'javascript', 'rust' ])
 call cosco_helpers#set_setting("g:cosco_map_cr",  1)
-
-" -------------------
-" Debug variables
-" -------------------
-call cosco_helpers#set_setting("g:cosco_debug",  0)

@@ -93,7 +93,12 @@ endfunction
 "	default: The default value for the setting.
 "
 function cosco_helpers#set_setting(name, default)
+
     if !exists(a:name)
         let {a:name} = a:default
+
+        if g:cosco_debug
+            echom "Using default value of " . a:name
+        endif
     endif
 endfunction
