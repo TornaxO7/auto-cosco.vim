@@ -33,7 +33,7 @@ function cosco_init#init()
     call cosco_init#set_setting("g:cosco_auto_setter_events", ["TextChangedI"])
     call cosco_init#set_setting("g:cosco_ignore_comments",    1)
     call cosco_init#set_setting("g:cosco_whitelist",          ['c', 'cpp', 'css', 'javascript', 'rust' ])
-    call cosco_init#set_setting("g:cosco_map_cr",             1)
+    call cosco_init#set_setting("g:cosco_map_cr",             0)
     call cosco_init#set_setting("g:cosco_enable",             1)
 
     " Disable cosco, if:

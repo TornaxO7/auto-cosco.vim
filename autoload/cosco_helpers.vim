@@ -49,7 +49,7 @@ function cosco_helpers#ActivateCosco()
 
         " if the user wants to map cosco to CR
         if g:cosco_map_cr
-            echom "imap"
+            echom "[AutoCosco] imap"
             imap <CR> <CR><CMD>call cosco#AdaptCode()<CR>
 
         " otherwise use the given events in the list to enable cosco
