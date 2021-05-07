@@ -54,7 +54,6 @@ function cosco_helpers#ActivateCosco()
 
         " otherwise use the given events in the list to enable cosco
         else
-
             call cosco_autocmds#ActivateCoscoEvents()
         endif
     endif

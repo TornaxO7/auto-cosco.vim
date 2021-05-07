@@ -38,8 +38,7 @@ function cosco_init#init()
 
     " Disable cosco, if:
     "   - the current filetype isn't in the whitelist
-    "   - cosco is manually disabled
-    if g:cosco_enable && index(g:cosco_whitelist, &ft) != -1
+    if index(g:cosco_whitelist, &ft) == -1
         let g:cosco_enable = 0
     endif
 endfunction

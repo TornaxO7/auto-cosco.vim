@@ -12,9 +12,11 @@ if exists("b:cosco_initialised") || &readonly
 endif
 let b:cosco_initialised = 1
 
+" load the daefult values for the settings
+" Take a look into :h cosco to get the list
 call cosco_init#init()
 
-" all autocommands for auto-cosco
+" This will set the
 augroup AutoCoscoAutoCommands
     autocmd!
     autocmd BufEnter * call cosco_helpers#ActivateCosco()
