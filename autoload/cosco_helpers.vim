@@ -45,7 +45,7 @@ endfunction
 " for each event in the list.
 function cosco_helpers#ActivateCosco() 
 
-    if cosco_helpers#FiletypeInWhitelist() 
+    if g:cosco_enable
 
         " if the user wants to map cosco to CR
         if g:cosco_map_cr
@@ -79,26 +79,4 @@ function cosco_helpers#get_information()
     let b:pln = prevnonblank(b:cln - 1)           " pln = *P*revious *L*ine *N*umber
     let b:pl  = getline(prevnonblank(b:cln - 1))  " pl  = *P*revious *L*ine
     let b:pls = trim(b:pl)         " pl  = *P*revious *L*ine
-endfunction
-
-"
-" What does it do?
-"   Loads the default setting of the given setting for cosco if the user didn't
-"   provide a value to it.
-"   Credits goes to vimtex: 
-"     https://github.com/lervag/vimtex/blob/master/autoload/vimtex/options.vim#L7
-"  
-" Parameters:
-"	name: The name of the setting (string)
-"	default: The default value for the setting.
-"
-function cosco_helpers#set_setting(name, default)
-
-    if !exists(a:name)
-        let {a:name} = a:default
-
-        if g:cosco_debug
-            echom "Using default value of " . a:name
-        endif
-    endif
 endfunction

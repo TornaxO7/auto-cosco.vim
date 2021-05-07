@@ -12,19 +12,18 @@ if exists("b:cosco_initialised") || &readonly
 endif
 let b:cosco_initialised = 1
 
-" =================
-" 1. Variables 
-" =================
-" -------------------
-" Debug variables
-" -------------------
-call cosco_helpers#set_setting("g:cosco_debug",  0)
+call cosco_init#init()
 
-" ---------------------------
-" 1.1 Configurable variables 
-" ---------------------------
-call cosco_helpers#set_setting("g:cosco_auto_setter",        1)
-call cosco_helpers#set_setting("g:cosco_auto_setter_events", ["TextChangedI"])
-call cosco_helpers#set_setting("g:cosco_ignore_comments",    1)
-call cosco_helpers#set_setting("g:cosco_whitelist",          ['c', 'cpp', 'css', 'javascript', 'rust' ])
-call cosco_helpers#set_setting("g:cosco_map_cr",  1)
+" all autocommands for auto-cosco
+augroup AutoCoscoAutoCommands
+    autocmd!
+    autocmd BufEnter * call cosco_helpers#ActivateCosco()
+augroup END
+
+" all user commands
+command! CoscoAdaptCode :call cosco_eval#Manual()<CR>
+command! CoscoToggleAutoSetter :call cosco_helpers#AutoSetterToggle()
+
+nnoremap <silent> <nowait> <Plug>(cosco-AdaptCode)
+    \ :<C-u>silent! call cosco#AdaptCode()<Bar>
+    \ silent! call repeat#set("\<Plug>(cosco-AdaptCode)")<CR>
