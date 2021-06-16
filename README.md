@@ -1,3 +1,9 @@
+# DEPRECTATED
+This vim-plugin isn't developed anymore. It's "newer" version is
+[tree-setter](https://github.com/TornaxO7/tree-setter): A TreeSitter module
+only available for neovim-0.5+. I'm sorry but TreeSitter makes it easier to
+maintain the code (at least from my point of view).
+
 # Hint
 This is only a forked for me and my friends! But you can still use it if you
 want.
