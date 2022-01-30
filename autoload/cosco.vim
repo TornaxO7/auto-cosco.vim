@@ -6,10 +6,6 @@
 "     of the plugin.
 " =========================================================
 
-" ############################
-"       Main function
-" ############################
-
 " How it general works:
 "   1. Get some information of the:
 "       - previous line
@@ -32,9 +28,6 @@ function cosco#AdaptCode()
         return 1
     endif
 
-    " ==========================
-    " Gathering information 
-    " ==========================
     call cosco_helpers#get_information()
 
     " =============================
