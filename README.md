@@ -1,4 +1,4 @@
-# ~~DEPRECTATED~~
+# DEPRECTATED
 This vim-plugin isn't developed anymore. It's "newer" version is
 [tree-setter](https://github.com/TornaxO7/tree-setter): A TreeSitter module
 only available for neovim-0.5+. I'm sorry but TreeSitter makes it easier to
